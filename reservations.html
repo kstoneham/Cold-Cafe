@@ -73,7 +73,7 @@
                 customerID: $("#reserve-unique-id").val().trim()
             };
             console.log(newReservation);
-            $.post("/api/tables", newReservation,
+            $.post("/api/reservations", newReservation,
             function(data){
                 if (data){
                     alert("Table's reserved, y'all!");
