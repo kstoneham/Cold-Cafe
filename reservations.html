@@ -63,6 +63,31 @@
             </div>
         </div>
     </div>
-    
+    <script>
+        $(".submit").on("click", function(event){
+            event.preventDefault();
+            var newReservation = {
+                customerName: $("#reserve-name").val().trim(),
+                phoneNumber: $("#reserve-phone").val().trim(),
+                customerEmail: $("#reserve-email").val().trim(),
+                customerID: $("#reserve-unique-id").val().trim()
+            };
+            console.log(newReservation);
+            $.post("/api/tables", newReservation,
+            function(data){
+                if (data){
+                    alert("Table's reserved, y'all!");
+                }
+                else{
+                    alert("Thanks for your request; you've been added to our anticipation list");
+                }
+                $("#reserve-name").val("");
+                $("#reserve-phone").val("");
+                $("#reserve-email").val("");
+                $("#reserve-unique-id").val("");
+            });
+        });
+    </script>
+
 </body>
 </html>
