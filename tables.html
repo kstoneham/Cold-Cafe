@@ -55,11 +55,13 @@
             $.ajax({ url: currentURL + "/api/tables", method: "GET"})
             .then(function(tableData){
                 console.log("-------------------------------------------");
+                console.log("CURRENT TABLES:")
+                console.log("-------------------------------------------");
                 console.log("URL: " + currentURL + "/api/tables");
-                console.log("-------------------------------------------")
+                console.log("-------------------------------------------");
                 console.log(tableData);
-                console.log("-------------------------------------------")
-                for (var i = 0; i < tableData.lenth; i++){
+                console.log("-------------------------------------------");
+                for (var i = 0; i < tableData.length; i++){
                     var tableSection = $("<div>");
                         tableSection.addClass("well");
                         tableSection.attr("id", "tableWell-" + i + 1);
@@ -73,11 +75,13 @@
             var currentURL = window.location.origin;
             $.ajax({ url: currentURL + "/api/waitlist", method: "GET"})
             .then(function(waitlistData){
-                console.log("-------------------------------------------")
+                console.log("-------------------------------------------");
+                console.log("WAITLIST DATA: ");
+                console.log("-------------------------------------------");
                 console.log("URL: " + currentURL + "/api/waitlist");
-                console.log("-------------------------------------------")
+                console.log("-------------------------------------------");
                 console.log(waitlistData);
-                console.log("-------------------------------------------")
+                console.log("-------------------------------------------");
                 for (var i = 0; i < waitlistData.length; i++){
                     var waitlistSection = $("<div>");
                         waitlistSection.addClass("well");

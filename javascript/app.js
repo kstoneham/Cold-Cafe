@@ -54,4 +54,11 @@ app.post("/api/reservations", function (req, res) {
     res.json(newGuest);
 });
 
+app.get("/api/tables", function (req, res) {
+    return res.json(reservations)
+ });
+ 
+ app.get("/api/waitlist", function (req, res) {
+    return res.json(waitlist)
+ });
   
